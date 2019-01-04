@@ -8,7 +8,7 @@ for migration.
 ### Setup baseline AWS resources 
 
 1. Run oracle2aurorastack.json CFN template to create AWS resources
-2. Example inputs for CFN template:
+2. Example inputs for CFN template:  
      VPC cidr block: 20.0.0.0/16  
      Subnet 1 : 20.0.0.0/24  
      Subnet 2 : 20.0.1.0/24  
@@ -26,18 +26,51 @@ for migration.
 
 ### Setup and Launch DMS
 
-1.	Create Oracle source endpoint 
-        servername=<ec2 private ip>
-        Port=1521
-        SID=orcl
-        username=claims
-        password=claims123
+1.	Create Oracle source endpoint   
+        servername=<ec2 private ip>  
+        Port=1521  
+        SID=orcl  
+        username=claims  
+        password=claims123  
         useLogminerReader=N on Advanced extra connection attributes
 2.	Create rds aurora target endpoint. Use all defaults
 3.	Create task using source and target endpoints. 
-        Migration type = migrate existing and ongoing changes
+        Migration type = migrate existing and ongoing changes  
         Schema = CLAIMS
 
+### Deploy BackSync Lambda & API Services for Angular 
+
+  Follow instructions from this repo - https://github.com/ramvittal/octank-claims-backsync-api  
+
+### Deploy Lambda for Claims Processor
+
+  Follow instructions from this repo - https://github.com/ramvittal/octank-claims-processor  
+
+### Deploy Angular Claims Website
+  Follow instructions from this repo - https://github.com/ramvittal/octank-claims-web  
+
+### Setup Batch Claims Processor
+
+1.	Setup a step function with two states as follows:
+  a.	Process Claims :  Point this to Claims Processor lambda arn
+  b.	Update Claims: Point this to Claims Backsync lambda arn
+  c.	Associate a step function role giving access to invoke the above lambdas
+2.	Setup a CloudWatch Event Timer Rule to invoke above step function
+  a.	Configure a fixed rate schedule and choose target as step function
+  b.	Configure input with following: { "requestId": "octank-claims-batch", "claimStatus": "Submitted" }
+
+### Setup QuickSight for reporting
+
+1. Add a new security group to Aurora DB, to give access to Quicksight - see details here https://docs.aws.amazon.com/quicksight/latest/user/enabling-access-rds.html
+2. Add a new Aurora RDS data source to QuickSight for reporting
+
+### Setup Cloudfront
+1. Serve Serverless Claims website via cloudfront - https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-cloudfront-walkthrough.html
+
+### Setup CodePipeline 
+
+1. As an example, octank-claims-processor is configured for codepipeline. You can use the buildspec.yaml as reference to build your pipeline. 
+2. You can use this AWS documentation as reference for setup - https://docs.aws.amazon.com/lambda/latest/dg/build-pipeline.html
 
 
 
