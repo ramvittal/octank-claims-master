@@ -9,11 +9,11 @@ for migration.
 
 1. Run oracle2aurorastack.json CFN template to create AWS resources
 2. Example inputs for CFN template:
-..... VPC cidr block: 20.0.0.0/16
-.....Subnet 1 : 20.0.0.0/24
-.....Subnet 2 : 20.0.1.0/24
-.....MyIp: 105.251.233.0/24
-.....Aurora creds: auradmin/auradmin123
+     VPC cidr block: 20.0.0.0/16
+     Subnet 1 : 20.0.0.0/24
+     Subnet 2 : 20.0.1.0/24
+     MyIp: 105.251.233.0/24
+     Aurora creds: auradmin/auradmin123
 
 ### Setup and Launch Oracle DB
 1. Connect to ec2 oracle linux instance using ec2-user
@@ -27,16 +27,16 @@ for migration.
 ### Setup and Launch DMS
 
 1.	Create Oracle source endpoint 
-.....servername=<ec2 private ip>
-.....Port=1521
-.....SID=orcl
-.....username=claims
-.....password=claims123
-.....useLogminerReader=N on Advanced extra connection attributes
+        servername=<ec2 private ip>
+        Port=1521
+        SID=orcl
+        username=claims
+        password=claims123
+        useLogminerReader=N on Advanced extra connection attributes
 2.	Create rds aurora target endpoint. Use all defaults
 3.	Create task using source and target endpoints. 
-.....Migration type = migrate existing and ongoing changes
-.....Schema = CLAIMS
+        Migration type = migrate existing and ongoing changes
+        Schema = CLAIMS
 
 
 
