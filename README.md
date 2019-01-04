@@ -29,7 +29,7 @@ This repo provides information on how to setup the environment for migration to 
 ### Setup and Launch DMS
 
 1.	Create Oracle source endpoint   
-        servername=<ec2 private ip>  
+        servername=<<ec2 private ip>>  
         Port=1521  
         SID=orcl  
         username=claims  
