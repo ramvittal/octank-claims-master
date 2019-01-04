@@ -6,8 +6,10 @@ Angular, S3, CloudFront, CodePipeline etc.
 This repo provides information on how to setup the environment for migration to AWS and code examples for building the solution. 
 
 ## AWS Serverless Claims Architecture
-![Image of AWS Serverless Claims Architecture]
-(https://github.com/ramvittal/octank-claims-master/blob/master/aws-serverless-claims-final.png)
+![alt text](https://github.com/ramvittal/octank-claims-master/blob/master/aws-serverless-claims-final.png "AWS Serverless Claims Architecture")
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 
 ## Setup Instructions
 
