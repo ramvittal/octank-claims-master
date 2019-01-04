@@ -5,6 +5,10 @@ and services such as AWS SAM, AWS Lambda, AWS Step Functions, Amazon Aurora, Ama
 Angular, S3, CloudFront, CodePipeline etc.
 This repo provides information on how to setup the environment for migration to AWS and code examples for building the solution. 
 
+## AWS Serverless Claims Architecture
+![Image of AWS Serverless Claims Architecture]
+(https://github.com/ramvittal/octank-claims-master/blob/master/aws-serverless-claims-final.jpg)
+
 ## Setup Instructions
 
 ### Setup baseline AWS resources 
