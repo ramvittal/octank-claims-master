@@ -8,7 +8,11 @@ This repo provides information on how to setup the environment for migration to 
 ## AWS Serverless Claims Architecture
 ![alt text](https://github.com/ramvittal/octank-claims-master/blob/master/aws-serverless-claims-final.png "AWS Serverless Claims Architecture")
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+## AWS Serverless Claims Migration Phased Approach
+![alt text](https://github.com/ramvittal/octank-claims-master/blob/master/aws-serverless-claims-phase-1.png "AWS Serverless Claims Phase-1 Architecture")
+
+![alt text](https://github.com/ramvittal/octank-claims-master/blob/master/aws-serverless-claims-phase-2.png "AWS Serverless Claims Phase-2 Architecture")
+
 
 
 ## Setup Instructions
