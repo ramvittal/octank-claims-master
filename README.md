@@ -9,10 +9,10 @@ for migration.
 
 1. Run oracle2aurorastack.json CFN template to create AWS resources
 2. Example inputs for CFN template:
-     VPC cidr block: 20.0.0.0/16
-     Subnet 1 : 20.0.0.0/24
-     Subnet 2 : 20.0.1.0/24
-     MyIp: 105.251.233.0/24
+     VPC cidr block: 20.0.0.0/16  
+     Subnet 1 : 20.0.0.0/24  
+     Subnet 2 : 20.0.1.0/24  
+     MyIp: 105.251.233.0/24  
      Aurora creds: auradmin/auradmin123
 
 ### Setup and Launch Oracle DB
