@@ -2,8 +2,8 @@
 
 This is a prototype for migrating on-prem 3-tier claims web app, oracle DB and batch claims processing to AWS using Serverless framework 
 and services such as AWS SAM, AWS Lamdba, AWS Step Functions, Amazon Aurora, Amazon CloudWatch, AWS Amplify, Amazon API Gateway,
-Angular, S3 etc.
-This repo provides information on how to setup the environment for migration to AWS. 
+Angular, S3, CloudFront, CodePipeline etc.
+This repo provides information on how to setup the environment for migration to AWS and code examples for building the solution. 
 
 ## Setup Instructions
 
